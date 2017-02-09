@@ -1,0 +1,51 @@
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:MovieApp" 
+	Title="MovieApp"
+	x:Class="MovieApp.MainPage">
+
+	<ListView
+		x:Name="moviesListView" 
+		ItemTapped="OnMovieSelected"
+		SeparatorVisibility="None"
+		RowHeight="150"> 
+	
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+
+				<StackLayout 
+						Orientation="Horizontal" 
+						HeightRequest="500"
+						Padding="0, 20, 0, 0">
+
+						<Image
+							WidthRequest="100"
+							HeightRequest="150"
+							Source="{Binding Poster_path, StringFormat='https://image.tmdb.org/t/p/w640/{0}'}"/>
+
+						<StackLayout  
+							Orientation="Vertical" 
+							VerticalOptions="Center"
+							HeightRequest="150">
+
+							<Label Text="{Binding Title}" />
+							<Label 
+								Text="{Binding Category}" 
+								FontSize="12"/>
+
+							<local:LongLabel 
+								Text="{Binding Overview}" 
+								FontSize="12"
+								LineBreakMode="TailTruncation"/>
+							
+						</StackLayout>
+							
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		
+		</ListView>	
+</ContentPage>
