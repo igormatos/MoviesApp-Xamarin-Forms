@@ -1,5 +1,6 @@
 ## MoviesApp Xamarin Forms
 Sample app that I built to learn Xamarin Forms development. It lists the popular movies using TheMovieDb API and shows it details. 
+
 ![App Screenshot](screenshot2.png) ![App Screenshot](screenshot3.png)
 
 ## TODO
